@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class=" is-full hasPageActions hasBreadcrumb module-page has-default-focus theme-light" lang="en-us" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="false" data-target="docs" x-ms-format-detection="none">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:title" content="Run Docker containers with Azure Container Instances - Learn" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.microsoft.com/en-us/learn/modules/run-docker-with-azure-container-instances/" />
+			<meta property="og:description" content="Learn how to run and troubleshoot containerized apps using Docker containers with Azure Container Instances." />
+		<meta property="og:image" content="https://docs.microsoft.com/learn/achievements/run-docker-with-azure-container-instances-social.png" />
+		<meta property="og:image:alt" content="Run Docker containers with Azure Container Instances - Learn | Microsoft Docs" />
+
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@docsmsft" />
+
+
+	<meta name="uid" content="learn.run-docker-containers-aci" />
+<meta name="description" content="Learn how to run and troubleshoot containerized apps using Docker containers with Azure Container Instances." />
+<meta name="ms.date" content="08/20/2019" />
+<meta name="author" content="cryophobia" />
+<meta name="ms.author" content="chrvaw" />
+<meta name="ms.topic" content="interactive-tutorial" />
+<meta name="ms.prod" content="learning-azure" />
+<meta name="localization_scopes" content="de-de" />
+<meta name="localization_scopes" content="es-es" />
+<meta name="localization_scopes" content="fr-fr" />
+<meta name="localization_scopes" content="it-it" />
+<meta name="localization_scopes" content="ru-ru" />
+<meta name="localization_scopes" content="pt-br" />
+<meta name="localization_scopes" content="ja-jp" />
+<meta name="localization_scopes" content="ko-kr" />
+<meta name="localization_scopes" content="zh-cn" />
+<meta name="localization_scopes" content="zh-tw" />
+<meta name="localization_scopes" content="cs-cz" />
+<meta name="localization_scopes" content="hu-hu" />
+<meta name="localization_scopes" content="nl-nl" />
+<meta name="localization_scopes" content="pl-pl" />
+<meta name="localization_scopes" content="pt-pt" />
+<meta name="localization_scopes" content="tr-tr" />
+<meta name="localization_scopes" content="sv-se" />
+<meta name="breadcrumb_path" content="/learn/breadcrumb/toc.json" />
+<meta name="clicktale" content="true" />
+<meta name="uhfHeaderId" content="MSDocsHeader-Learn" />
+<meta name="search.ms_sitename" content="Docs" />
+<meta name="search.ms_docsetname" content="learn-pr" />
+<meta name="locale" content="en-us" />
+<meta name="site_name" content="Docs" />
+<meta name="search.ms_product" content="Docs" />
+<meta name="depot_name" content="Docs.learn-pr" />
+<meta name="updated_at" content="2020-05-23 12:49 AM" />
+<meta name="document_id" content="fcfdc0f6-f3ce-0716-b27f-80f9211c77dc" />
+<meta name="document_version_independent_id" content="3516b694-1dda-fd10-6cad-1e27800eac5e" />
+<meta name="original_ref_skeleton_git_url" content="https://github.com/MicrosoftDocs/learn-pr/blob/live/learn-pr/azure/run-docker-with-azure-container-instances/index.yml" />
+<meta name="ref_skeleton_gitcommit" content="https://github.com/MicrosoftDocs/learn-pr/blob/4f83f4dbb1956d5c06de961115df71943aca0e97/learn-pr/azure/run-docker-with-azure-container-instances/index.yml" />
+<meta name="page_type" content="learn" />
+<meta name="page_kind" content="module" />
+
+
+<link href="https://docs.microsoft.com/en-us/learn/modules/run-docker-with-azure-container-instances/" rel="canonical">
+	<title>Run Docker containers with Azure Container Instances - Learn | Microsoft Docs</title>
+
+		<link rel="stylesheet" href="/_themes/docs.theme/master/en-us/_themes/styles/c4e9f1e3.site-ltr.css ">
+
+	<link rel="stylesheet" href="/_themes/docs.theme/master/en-us/_themes/styles/7d5a7134.modulepage.css ">
+
+
+	<script>
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Module',
+			brand: '',
+			context: {
+
+			},
+			hasBinaryRating: false,
+			hasGithubIssues: false,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'GitHub',
+			feedbackGitHubRepo: 'MicrosoftDocs/learn',
+			feedbackProductUrl: '',
+			contentGitUrl: '',
+			extendBreadcrumb: false,
+			isEditDisplayable: false,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasBookmark: false,
+			hasShare: false
+		},
+		functions:{}
+	};
+	</script>
+	<script nomodule src="/static/third-party/bluebird/3.5.0/bluebird.min.js" integrity="sha384-aD4BDeDGeLXLpPK4yKeqtZQa9dv4a/7mQ+4L5vwshIYH1Mc2BrXvHd32iHzYCQy5" crossorigin="anonymous"></script>
+	<script nomodule src="/static/third-party/fetch/3.0.0/fetch.umd.min.js" integrity="sha384-EQIXrC5K2+7X8nGgLkB995I0/6jfAvvyG1ieZ+WYGxgJHFMD/alsG9fSDWvzb5Y1" crossorigin="anonymous"></script>
+	<script nomodule src="/static/third-party/template/1.4.0/template.min.js" integrity="sha384-1zKzI6ldTVHMU7n0W2HpE/lhHI+UG4D9IIaxbj3kT2UhCWicdTuJkTtnKuu0CQzN" crossorigin="anonymous"></script>
+	<script nomodule src="/static/third-party/url/0.5.7/url.min.js" integrity="sha384-vn7xBMtpSTfzaTRWxj0kVq0UcsbBrTOgZ/M1ISHqe1V358elYva+lfiEC+T8jLPc" crossorigin="anonymous"></script>
+	<script nomodule src="/_themes/docs.theme/master/en-us/_themes/scripts/e482e449.index-polyfills.js"></script>
+		<script src="/static/third-party/jquery/3.3.1/jquery.min.js" integrity="sha384-Q4GEli30r5Awgb/ITt925nE8buHKjVWM/x3DX8t5JwRLT9P/C2r7u7XzNwvpTTGw" crossorigin="anonymous"></script>
+		<script src="/_themes/docs.theme/master/en-us/_themes/scripts/2563b168.index-docs.js"></script>
+</head>
+
+<body lang="en-us" dir="ltr">
+<div class="header-holder has-default-focus">
+	<a href="#main" class="skip-to-main-link visually-hidden-until-focused is-fixed has-inner-focus focus-visible has-top-zero has-left-zero has-right-zero has-padding-medium has-text-centered has-body-background-medium" tabindex="1">Skip to main content</a>
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+	<div class="nav-bar">
+		<a itemprop="url" href="https://www.microsoft.com" aria-label="Microsoft" class="nav-bar-button has-padding-left-medium-mobile">
+			<div class="nav-bar-logo has-background-image theme-display is-light" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+			<div class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+		</a>
+		<div class="nav-bar-item is-hidden-tablet">
+			<button class="nav-bar-button is-size-5 is-text has-body-background has-padding-none" title="Global navigation">
+				<span class="has-text-weight-semibold has-padding-left-small has-padding-bottom-extra-small"></span>
+				<div class="nav-bar-burger has-padding-none has-height-zero">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span class="is-visually-hidden">Global navigation</span>
+				</div>
+			</button>
+		</div>
+		<nav class="nav-bar-nav" role="navigation" aria-label="Global">
+			<ul class="nav-bar-nav-list">
+				<li class="nav-bar-item is-category has-spacing">
+					<a class="nav-bar-button title has-hover-underline is-4" itemprop="url" href="/en-us/">
+						<span>Docs</span>
+					</a>
+				</li>
+				<li class="nav-bar-item">
+					<a class="nav-bar-button has-hover-underline" href="/en-us/">
+						<span>Documentation</span>
+					</a>
+				</li>
+				<li class="nav-bar-item">
+					<a class="nav-bar-button has-hover-underline" href="/en-us/learn/">
+						<span>Learn</span>
+					</a>
+				</li>
+				<li class="nav-bar-item">
+					<a class="nav-bar-button has-hover-underline" href="/en-us/samples/browse/">
+						<span>Code Samples</span>
+					</a>
+				</li>
+				<li class="dropdown nav-bar-item" hidden="">
+					<button aria-expanded="false" class="dropdown-trigger nav-bar-button has-hover-underline" aria-controls="ax-53">
+						<span>More</span>
+						<span class="nav-bar-button-chevron" aria-hidden="true">
+							<span class="docon docon-chevron-down-light expanded-indicator"></span>
+						</span>
+					</button>
+					<ul class="dropdown-menu" id="ax-53" aria-label="More">
+						<li class="nav-bar-item" hidden="">
+							<a class="nav-bar-button" href="/en-us/">Documentation</a>
+						</li>
+						<li class="nav-bar-item" hidden="">
+							<a class="nav-bar-button" href="/en-us/learn/">Learn</a>
+						</li>
+						<li class="nav-bar-item" hidden="">
+							<a class="nav-bar-button" href="/en-us/samples/browse/">Code Samples</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<span class="nav-bar-spacer is-hidden-mobile"></span>
+		<div class="nav-bar-item has-flex-grow-mobile has-flex-shrink-mobile">
+		</div>
+		<div class="nav-bar-item is-size-7 is-hidden-mobile">
+		</div>
+	</div>
+	<div class="nav-bar is-content is-hidden-mobile has-border-top">
+	</div>
+</header>		</div>
+		<div class="content-header uhf-container has-padding has-default-focus has-border-bottom-none" data-bi-name="content-header">
+			<nav class="has-padding-none has-padding-left-medium-tablet has-padding-right-medium-tablet has-padding-left-none-uhf-tablet has-padding-left-none-uhf-tablet has-padding-none-desktop has-flex-grow" data-bi-name="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList" role="navigation" aria-label="Breadcrumb">
+				<ul id="page-breadcrumbs" class="breadcrumbs">
+				</ul>
+			</nav>
+		<div class="content-header-controls">
+			<button type="button" class="contents-button button" data-bi-name="contents-expand" aria-haspopup="true">
+				<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+				<span>Contents</span>
+			</button>
+		</div>
+		<div class="content-header-controls exit-focus">
+			<button type="button" class="ap-collapse-behavior ap-expanded button" data-bi-name="ap-collapse" aria-controls="action-panel">
+				<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+				<span>Exit focus mode</span>
+			</button>
+		</div>
+		<div class="has-padding-none-tablet has-padding-medium is-size-7 is-flex-touch has-flex-justify-content-space-between-touch has-flex-grow">
+			<ul class="is-hidden-mobile action-list has-flex-justify-content-start has-flex-justify-content-end-tablet is-flex is-flex-row has-flex-wrap has-flex-grow is-unstyled">
+					<li id="level-status-container" class="is-flex has-flex-align-items-center is-hidden is-hidden-touch">
+						<div id="level-status" class="is-relative level has-margin-left-extra-small has-margin-right-extra-small"></div>
+					</li>
+			</ul>
+			<button type="button" class="has-border contents-button button is-small is-text is-hidden-tablet has-inner-focus" aria-label="Contents" data-bi-name="contents-expand">
+				<span class="icon">
+					<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+				</span>
+				<span>Table of contents</span>
+			</button>
+			<div class="is-invisible"></div>
+			<div class="is-hidden-tablet level-item is-flexible level-right">
+				<button type="button" class="page-actions-button button is-small is-text is-hidden-tablet has-inner-focus has-border is-full-height  has-margin-left-small" aria-label="Page Actions" data-bi-name="pageactions">
+					<span class="icon">
+						<span class="docon docon-more-vertical" aria-hidden="true"></span>
+					</span>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus"></div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-body-background-dark uhf-container is-full  has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile  is-gapless">
+
+
+			<section class="primary-holder column ">
+				<div class="columns is-gapless-mobile has-large-gaps  is-gapless">
+
+
+				<div id="main-column" class="column ">
+
+					<main id="main" role="main" class="" data-bi-name="content" lang="en-us" dir="ltr">
+
+
+<div class="is-mobile is-fixed-bottom is-hidden-tablet">
+	<a id="start-unit-mobile" class="button is-fullwidth is-primary is-radiusless is-large has-margin-none" data-bi-name="start">
+		<span>Start</span>
+		<span class="icon docon docon-chevron-right-light" aria-hidden="true"></span>
+	</a>
+</div>
+
+						
+
+
+						<!-- <content> -->
+							<div class="modular-content-container" data-bi-name="module">
+	<div class="section is-small is-uniform has-padding-none has-padding-top-extra-large-tablet has-padding-right-large-tablet has-padding-bottom-extra-large-tablet has-padding-left-large-tablet has-padding-large-desktop is-relative-mobile">
+		<div class="box is-shadowless-mobile has-padding-none">
+			<div class="has-padding-large has-padding-bottom-none has-padding-medium-tablet">
+				<div class="columns has-large-gaps has-margin-none">
+
+					<figure class="image is-112x112-desktop is-96x96 has-margin-bottom-large">
+						<img role="presentation" src="/en-us/learn/achievements/run-docker-with-azure-container-instances.svg" alt="" data-linktype="absolute-path">
+					</figure>
+
+					<div class="column is-auto has-padding-none has-padding-large-tablet is-relative-tablet">
+						<div data-progress-uid="learn.run-docker-containers-aci" class="xp-tag is-hidden is-absolute has-top-zero has-margin-top-medium has-margin-top-none-tablet has-right-zero has-margin-right-extra-large-tablet has-margin-right-large">
+							<div class="xp-tag-hexagon">
+								<span aria-hidden="true" class="xp-tag-icon is-shown-complete docon docon-check"></span>
+								<span class="xp-tag-xp"></span>
+							</div>
+						</div>
+						<div class="columns is-mobile is-gapless has-margin-bottom-none">
+							<div class="column is-auto heading-container">
+								<h1 class="has-margin-none title is-2 has-padding-top-extra-small-tablet has-content-margin-right-super-large-tablet has-margin-top-none has-margin-bottom-none">Run Docker containers with Azure Container Instances</h1>
+								<ul class="metadata page-metadata">
+									<li class="module-duration-minutes"></li>
+									<li>
+										Module
+									</li>
+									<li class="module-unit-count">
+										7 Units
+									</li>
+								</ul>
+									<div class="page-rating">
+									</div>
+							</div>
+						</div>
+
+						<div class="is-size-7 tags has-margin-top-small has-margin-bottom-small is-hidden-mobile">
+								<div class="tag is-size-8">
+									Intermediate
+								</div>
+								<div class="tag is-size-8">
+									Administrator
+								</div>
+								<div class="tag is-size-8">
+									Solutions Architect
+								</div>
+								<div class="tag is-size-8">
+									Student
+								</div>
+								<div class="tag is-size-8">
+									Azure
+								</div>
+								<div class="tag is-size-8">
+									Container Instances
+								</div>
+								<div class="tag is-size-8">
+									Cosmos DB
+								</div>
+						</div>
+
+						<div class="summary content is-size-5 is-size-6-mobile has-margin-top-small"><p>Learn how to run containerized apps using Docker containers with Azure Container Instances (ACI).</p>
+</div>
+
+							<div class="abstract content is-size-6 has-margin-top-medium has-margin-bottom-medium">
+								<p>In this module, you will:</p>
+<ul>
+<li>Run containers in Azure Container Instances</li>
+<li>Control what happens when your container exits</li>
+<li>Use environment variables to configure your container when it starts</li>
+<li>Attach a data volume to persist data when your container exits</li>
+<li>Learn some basic ways to troubleshoot issues on your Azure containers</li>
+</ul>
+
+							</div>
+
+						<div id="module-actions" class="buttons">
+							<button type="button" class="bookmark button is-text has-inner-focus" data-list-type="bookmarks" data-bi-name="bookmark" title="Bookmark this page">
+								<span class="icon has-text-primary" aria-hidden="true">
+									<span class="docon docon-single-bookmark"></span>
+								</span>
+								<span class="bookmark-status">
+									Bookmark
+								</span>
+							</button>
+							<button type="button" class="collection button is-text has-inner-focus has-margin-right-none" data-bi-name="collection" data-list-item-title="Run Docker containers with Azure Container Instances" data-list-type="collection">
+								<span class="icon has-text-primary" aria-hidden="true">
+									<span class="docon docon-circle-addition"></span>
+								</span>
+								<span class="add-to-collection-status">
+									Add to collection
+								</span>
+							</button>
+						</div>
+
+							<div class="prerequisites content">
+								<h2 class="title is-6 has-margin-bottom-none has-margin-top-medium">Prerequisites</h2>
+								<p>None</p>
+
+							</div>
+
+						<div id="parent-learning-paths"></div>
+
+						<ul id="unit-list" class="has-margin-top-large module-unit-list-mobile is-unstyled" data-bi-name="units">
+								<li class="module-unit is-size-5 is-relative has-padding-bottom-medium has-padding-top-medium has-padding-bottom-small-tablet has-padding-top-small-tablet has-border-top-mobile completable" data-unit-uid="learn.run-docker-containers-aci.1-introduction" data-progress-uid="learn.run-docker-containers-aci.1-introduction">
+									<div class="barLink is-unit-list-item has-margin-none has-content-margin-left-large has-content-margin-left-none-tablet columns">
+										<div class="column is-11 is-11-mobile has-padding-none has-content-margin-right-medium">
+											<a class="unit-title is-block is-size-5 is-size-6-mobile has-line-height-reset" href="1-introduction" data-linktype="relative-path">Introduction to Azure Container Instances</a>
+
+											<span class="unit-duration is-size-8 has-margin-top-small has-text-subtle">min</span>
+										</div>
+										<div class="column is-1 is-1-mobile has-padding-none">
+											<span class="has-text-success docon docon-check is-shown-complete"></span>
+											<span class="docon docon-chevron-right-light is-size-3 is-hidden-tablet is-hidden-complete"></span>
+										</div>
+									</div>
+								</li>
+								<li class="module-unit is-size-5 is-relative has-padding-bottom-medium has-padding-top-medium has-padding-bottom-small-tablet has-padding-top-small-tablet has-border-top-mobile completable" data-unit-uid="learn.run-docker-containers-aci.2-run-aci" data-progress-uid="learn.run-docker-containers-aci.2-run-aci">
+									<div class="barLink is-unit-list-item has-margin-none has-content-margin-left-large has-content-margin-left-none-tablet columns">
+										<div class="column is-11 is-11-mobile has-padding-none has-content-margin-right-medium">
+											<a class="unit-title is-block is-size-5 is-size-6-mobile has-line-height-reset" href="2-run-aci" data-linktype="relative-path">Exercise - Run Azure Container Instances</a>
+
+											<span class="unit-duration is-size-8 has-margin-top-small has-text-subtle">min</span>
+										</div>
+										<div class="column is-1 is-1-mobile has-padding-none">
+											<span class="has-text-success docon docon-check is-shown-complete"></span>
+											<span class="docon docon-chevron-right-light is-size-3 is-hidden-tablet is-hidden-complete"></span>
+										</div>
+									</div>
+								</li>
+								<li class="module-unit is-size-5 is-relative has-padding-bottom-medium has-padding-top-medium has-padding-bottom-small-tablet has-padding-top-small-tablet has-border-top-mobile completable" data-unit-uid="learn.run-docker-containers-aci.3-restart-policy" data-progress-uid="learn.run-docker-containers-aci.3-restart-policy">
+									<div class="barLink is-unit-list-item has-margin-none has-content-margin-left-large has-content-margin-left-none-tablet columns">
+										<div class="column is-11 is-11-mobile has-padding-none has-content-margin-right-medium">
+											<a class="unit-title is-block is-size-5 is-size-6-mobile has-line-height-reset" href="3-restart-policies" data-linktype="relative-path">Exercise - Control restart behavior</a>
+
+											<span class="unit-duration is-size-8 has-margin-top-small has-text-subtle">min</span>
+										</div>
+										<div class="column is-1 is-1-mobile has-padding-none">
+											<span class="has-text-success docon docon-check is-shown-complete"></span>
+											<span class="docon docon-chevron-right-light is-size-3 is-hidden-tablet is-hidden-complete"></span>
+										</div>
+									</div>
+								</li>
+								<li class="module-unit is-size-5 is-relative has-padding-bottom-medium has-padding-top-medium has-padding-bottom-small-tablet has-padding-top-small-tablet has-border-top-mobile completable" data-unit-uid="learn.run-docker-containers-aci.4-use-environment-variables" data-progress-uid="learn.run-docker-containers-aci.4-use-environment-variables">
+									<div class="barLink is-unit-list-item has-margin-none has-content-margin-left-large has-content-margin-left-none-tablet columns">
+										<div class="column is-11 is-11-mobile has-padding-none has-content-margin-right-medium">
+											<a class="unit-title is-block is-size-5 is-size-6-mobile has-line-height-reset" href="4-use-environment-variables" data-linktype="relative-path">Exercise - Set environment variables</a>
+
+											<span class="unit-duration is-size-8 has-margin-top-small has-text-subtle">min</span>
+										</div>
+										<div class="column is-1 is-1-mobile has-padding-none">
+											<span class="has-text-success docon docon-check is-shown-complete"></span>
+											<span class="docon docon-chevron-right-light is-size-3 is-hidden-tablet is-hidden-complete"></span>
+										</div>
+									</div>
+								</li>
+								<li class="module-unit is-size-5 is-relative has-padding-bottom-medium has-padding-top-medium has-padding-bottom-small-tablet has-padding-top-small-tablet has-border-top-mobile completable" data-unit-uid="learn.run-docker-containers-aci.5-use-data-volumes" data-progress-uid="learn.run-docker-containers-aci.5-use-data-volumes">
+									<div class="barLink is-unit-list-item has-margin-none has-content-margin-left-large has-content-margin-left-none-tablet columns">
+										<div class="column is-11 is-11-mobile has-padding-none has-content-margin-right-medium">
+											<a class="unit-title is-block is-size-5 is-size-6-mobile has-line-height-reset" href="5-use-data-volumes" data-linktype="relative-path">Exercise - Use data volumes</a>
+
+											<span class="unit-duration is-size-8 has-margin-top-small has-text-subtle">min</span>
+										</div>
+										<div class="column is-1 is-1-mobile has-padding-none">
+											<span class="has-text-success docon docon-check is-shown-complete"></span>
+											<span class="docon docon-chevron-right-light is-size-3 is-hidden-tablet is-hidden-complete"></span>
+										</div>
+									</div>
+								</li>
+								<li class="module-unit is-size-5 is-relative has-padding-bottom-medium has-padding-top-medium has-padding-bottom-small-tablet has-padding-top-small-tablet has-border-top-mobile completable" data-unit-uid="learn.run-docker-containers-aci.6-troubleshoot-aci" data-progress-uid="learn.run-docker-containers-aci.6-troubleshoot-aci">
+									<div class="barLink is-unit-list-item has-margin-none has-content-margin-left-large has-content-margin-left-none-tablet columns">
+										<div class="column is-11 is-11-mobile has-padding-none has-content-margin-right-medium">
+											<a class="unit-title is-block is-size-5 is-size-6-mobile has-line-height-reset" href="6-troubleshoot-aci" data-linktype="relative-path">Exercise - Troubleshoot Azure Container Instances</a>
+
+											<span class="unit-duration is-size-8 has-margin-top-small has-text-subtle">min</span>
+										</div>
+										<div class="column is-1 is-1-mobile has-padding-none">
+											<span class="has-text-success docon docon-check is-shown-complete"></span>
+											<span class="docon docon-chevron-right-light is-size-3 is-hidden-tablet is-hidden-complete"></span>
+										</div>
+									</div>
+								</li>
+								<li class="module-unit is-size-5 is-relative has-padding-bottom-medium has-padding-top-medium has-padding-bottom-small-tablet has-padding-top-small-tablet has-border-top-mobile completable" data-unit-uid="learn.run-docker-containers-aci.7-knowledge-check" data-progress-uid="learn.run-docker-containers-aci.7-knowledge-check">
+									<div class="barLink is-unit-list-item has-margin-none has-content-margin-left-large has-content-margin-left-none-tablet columns">
+										<div class="column is-11 is-11-mobile has-padding-none has-content-margin-right-medium">
+											<a class="unit-title is-block is-size-5 is-size-6-mobile has-line-height-reset" href="7-knowledge-check" data-linktype="relative-path">Knowledge check</a>
+
+											<span class="unit-duration is-size-8 has-margin-top-small has-text-subtle">min</span>
+										</div>
+										<div class="column is-1 is-1-mobile has-padding-none">
+											<span class="has-text-success docon docon-check is-shown-complete"></span>
+											<span class="docon docon-chevron-right-light is-size-3 is-hidden-tablet is-hidden-complete"></span>
+										</div>
+									</div>
+								</li>
+						<ul>
+					</ul></ul></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+						<!-- </content> -->
+
+						</main>
+
+						<!-- recommended content page section -->
+
+
+						<!-- end recommended content page section -->
+
+						<!-- page rating section -->
+						<!-- end page rating section -->
+
+
+						<!-- feedback section -->
+
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+						<div class="footerContainer is-visible-interactive has-default-focus  has-border-top has-margin-none">
+<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+
+    <div class="is-flex is-full-height has-padding-right-extra-large-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link has-flex-shrink-none" href="#" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text"></span></a>
+		<div class="has-margin-left-medium has-margin-right-medium has-flex-shrink-none">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button is-transparent is-small is-icon-only-touch has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu-interactive" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector has-padding-small">
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start"
+					data-theme-to="light">
+					<span class="theme-light has-margin-right-small">
+						<span
+							class="theme-selector-icon css-variable-support has-border is-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Light					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start"
+					data-theme-to="dark">
+					<span class="theme-dark has-margin-right-small">
+						<span
+							class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast has-margin-right-small">
+						<span
+							class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>		</div>
+	</div>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+				<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+			<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>&copy; Microsoft 2020</li>
+    </ul>
+</footer>
+						</div>
+					</div>
+
+
+					<!--end of div.columns -->
+				</div>
+
+			<!--end of .primary-holder -->
+			</section>
+
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+		</div>
+
+		<!--end of .mainContainer -->
+	</div>
+
+	<div id="openFeedbackContainer" class="openfeedback-container"></div>
+
+	<div class="footerContainer has-default-focus is-hidden-interactive  has-border-top has-margin-none">
+<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+
+    <div class="is-flex is-full-height has-padding-right-extra-large-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link has-flex-shrink-none" href="#" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text"></span></a>
+		<div class="has-margin-left-medium has-margin-right-medium has-flex-shrink-none">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button is-transparent is-small is-icon-only-touch has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector has-padding-small">
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start"
+					data-theme-to="light">
+					<span class="theme-light has-margin-right-small">
+						<span
+							class="theme-selector-icon css-variable-support has-border is-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Light					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start"
+					data-theme-to="dark">
+					<span class="theme-dark has-margin-right-small">
+						<span
+							class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast has-margin-right-small">
+						<span
+							class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>		</div>
+	</div>
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+				<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+			<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>&copy; Microsoft 2020</li>
+    </ul>
+</footer>
+	</div>
+
+	<div id="action-panel" role="region" aria-label="Action Panel" class="action-panel has-default-focus" tabindex="-1"></div>
+</body>
+</html>
