@@ -1,0 +1,18 @@
+From 74b134fb42f5c70ff344dd3ebdf464804407c97c Mon Sep 17 00:00:00 2001
+From: allyncharpentier@rocketmail.com <Allyn69@users.noreply.github.com>
+Date: Mon, 25 May 2020 12:46:32 -0700
+Subject: [PATCH] https://docs.microsoft.com/answers/questions/29193/the-package-doesnt-contain-any-application-element.html
+
+---
+ ?.html | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 ?.html
+
+diff --git a/?.html b/?.html
+new file mode 100644
+index 0000000..e69de29
+--- /dev/null
++++ b/?.html
+--
+Working Copy 4.2.3
+
